@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Subscription - MotoLux</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #0043ff;
+        }
+        .plans {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .plan {
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #e9ecef;
+            width: 30%;
+            transition: 0.3s;
+        }
+        .plan:hover {
+            background: #d6d8db;
+        }
+        .selected {
+            border: 2px solid #0043ff;
+            background: #cce5ff;
+        }
+        .summary {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .summary p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #0043ff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0026b3;
+        }
+        @media (max-width: 600px) {
+            .plans {
+                flex-direction: column;
+                align-items: center;
+            }
+            .plan {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Subscription Plan</h2>
+        <p>Choose the Subscription and enjoy the discount offer for booking the car</p>
+        <div class="plans">
+            <div class="plan" onclick="selectPlan(this, 'Silver', 10, 9.99)">Silver - 10% Off</div>
+            <div class="plan" onclick="selectPlan(this, 'Gold', 20, 19.99)">Gold - 20% Off</div>
+            <div class="plan selected" onclick="selectPlan(this, 'Premium', 30, 29.99)">Premium - 30% Off</div>
+        </div>
+        <div class="summary">
+            <p>Subscription Plan: <span id="plan-name">Premium</span></p>
+            <p>Discount: <span id="discount">30%</span></p>
+            <p>Total Price: <span id="price">$29.99</span></p>
+        </div>
+        <form id="subscription-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="card" placeholder="Card Number" required>
+            <input type="text" id="expiry" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" id="cvv" placeholder="Card Validation Value" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function selectPlan(element, name, discount, price) {
+            document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('plan-name').innerText = name;
+            document.getElementById('discount').innerText = discount + '%';
+            document.getElementById('price').innerText = '$' + price;
+        }
+        const form = document.getElementById("subscription-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const subscriptionData = {
+                name: form.name.value,
+                email: form.email.value,
+                plan: document.getElementById("plan-name").innerText,
+                discount: parseFloat(document.getElementById("discount").innerText.replace("%", "")),
+                price: parseFloat(document.getElementById("price").innerText.replace("$", "")),
+                cardLast4Digits: form.card.value.slice(-4)
+            };
+            try {
+                const response = await fetch("http://localhost:5000/api/subscription", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(subscriptionData)
+                });
+                const result = await response.json();
+                console.log("Subscription Result:", result);
+                alert("Subscription purchased successfully!");
+            } catch (error) {
+                console.error("Subscription Error:", error);
+                alert("Subscription purchase failed. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

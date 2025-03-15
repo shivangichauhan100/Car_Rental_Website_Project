@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoLux Rentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(90deg, #0043ff, #0026b3);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .services-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .services-section h2 {
+            color: #222;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .services-section p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            height: 180px;
+            object-fit: cover;
+        }
+        .service-card h3 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #555;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        .book-now {
+            display: inline-block;
+            background: linear-gradient(90deg, #0043ff, #0026b3);
+            color: white;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .book-now:hover {
+            background: linear-gradient(90deg, #0037e6, #001d80);
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            color: white;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MotoLux Rentals</h1>
+    </header>
+
+    <section class="services-section">
+        <h2>Cars Available in Your City</h2>
+        <p>Find the perfect ride for your journey. Choose from our exclusive fleet.</p>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.t8hf0ToV0faOGqnMrwILegHaE8&pid=Api&P=0&h=180"
+                    alt="Lamborghini Aventador">
+                <h3>Lamborghini Aventador</h3>
+                <p><strong>Mileage:</strong> 7 km/l</p>
+                <p><strong>Facilities:</strong> Luxury Interiors, GPS Navigation, Premium Audio System</p>
+                <p><strong>Rent:</strong> ₹15,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="http://1.bp.blogspot.com/-Koxr7Tlguhg/Umo0ruTxTcI/AAAAAAAAMCc/HMJp8Wk-gG4/s1600/Toyota+iQ+-+a+small+two+seater+car.jpg"
+                    alt="Toyota iQ">
+                <h3>Toyota iQ</h3>
+                <p><strong>Mileage:</strong> 22 km/l</p>
+                <p><strong>Facilities:</strong> Air Conditioning, Compact Design, GPS Navigation</p>
+                <p><strong>Rent:</strong> ₹3,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://www.topgear.com/sites/default/files/2021/09/2.%202021%20Aura%20concept%20-%20British%20sports%20car%20driving.jpg?w=1784&h=1004"
+                    alt="Aura Concept">
+                <h3>Aura Concept</h3>
+                <p><strong>Mileage:</strong> 10 km/l</p>
+                <p><strong>Facilities:</strong> Sports Design, GPS Navigation, Convertible Roof</p>
+                <p><strong>Rent:</strong> ₹8,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://i.pinimg.com/originals/1b/06/d8/1b06d8e2fcdf7ef433cb2c84fabe4510.jpg"
+                    alt="Mazda Miata">
+                <h3>Mazda Miata</h3>
+                <p><strong>Mileage:</strong> 12 km/l</p>
+                <p><strong>Facilities:</strong> Convertible, Sporty Drive, Air Conditioning</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://www.team-bhp.com/forum/attachments/indian-car-scene/1914515d1568260754-potential-2-seater-cars-india-hondae.jpg"
+                    alt="Honda E">
+                <h3>Honda E</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Compact Electric Car, GPS Navigation, Smart Features</p>
+                <p><strong>Rent:</strong> ₹4,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgk.timesnownews.com/story/1568287169-The_New_Toyota_Fortuner_TRD_Celebratory_Edition_with_Pearl_White_with_Attitude_Black_Dual_Tone_Exterior_1.jpg"
+                    alt="Toyota Fortuner">
+                <h3>Toyota Fortuner</h3>
+                <p><strong>Mileage:</strong> 12 km/l</p>
+                <p><strong>Facilities:</strong> Spacious Interior, GPS Navigation, Dual-Zone Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+
+            </div>
+
+            <div class="service-card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.czZ08Pgd9jMckzPuRM64rgHaEK&pid=Api&P=0&h=180"
+                    alt="Honda Civic">
+                <h3>Honda Civic</h3>
+                <p><strong>Mileage:</strong> 15 km/l</p>
+                <p><strong>Facilities:</strong> Premium Interior, Air Conditioning, Sunroof</p>
+                <p><strong>Rent:</strong> ₹4,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="BMW 3 Series">
+                <h3>BMW 3 Series</h3>
+                <p><strong>Mileage:</strong> 10 km/l</p>
+                <p><strong>Facilities:</strong> Luxury Interiors, GPS, Surround Sound System</p>
+                <p><strong>Rent:</strong> ₹6,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Hyundai Verna">
+                <h3>Hyundai Verna</h3>
+                <p><strong>Mileage:</strong> 18 km/l</p>
+                <p><strong>Facilities:</strong> Compact Comfort, GPS Navigation, Air Conditioning</p>
+                <p><strong>Rent:</strong> ₹3,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/184377/amaze-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80"
+                    alt="Honda Amaze">
+                <h3>Honda Amaze</h3>
+                <p><strong>Mileage:</strong> 14 km/l</p>
+                <p><strong>Facilities:</strong> Premium Interior, Dual-Zone Climate Control, GPS Navigation</p>
+                <p><strong>Rent:</strong> ₹6,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/170173/dzire-2024-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80"
+                    alt="Maruti Dzire">
+                <h3>Maruti Dzire</h3>
+                <p><strong>Mileage:</strong> 16 km/l</p>
+                <p><strong>Facilities:</strong> Spacious Interior, Sunroof, Modern Safety Features</p>
+                <p><strong>Rent:</strong> ₹5,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Honda CR-V">
+                <h3>Honda CR-V</h3>
+                <p><strong>Mileage:</strong> 18 km/l</p>
+                <p><strong>Facilities:</strong> Reliable SUV, GPS, Air Conditioning</p>
+                <p><strong>Rent:</strong> ₹4,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-4.jpeg?isig=0&q=800"
+                    alt="Hyundai Creta">
+                <h3>Hyundai Creta</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Stylish Design, Modern Tech, Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/171777/kylaq-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80"
+                    alt="Skoda Kylaq">
+                <h3>Skoda Kylaq</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Stylish Design, Modern Tech, Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/159099/swift-exterior-right-front-three-quarter.jpeg?isig=0&q=80"
+                    alt="Maruti Swift">
+                <h3>Maruti Swift</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Stylish Design, Modern Tech, Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/156405/xuv-3xo-exterior-right-front-three-quarter-33.jpeg?isig=0&wm=0&q=80"
+                    alt="Mahindra XUV 3XO">
+                <h3>Mahindra XUV 3XO</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Stylish Design, Modern Tech, Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/141867/nexon-exterior-right-front-three-quarter-71.jpeg?isig=0&q=800"
+                    alt="Tata Nexon">
+                <h3>Tata Nexon</h3>
+                <p><strong>Mileage:</strong> 20 km/l</p>
+                <p><strong>Facilities:</strong> Stylish Design, Modern Tech, Climate Control</p>
+                <p><strong>Rent:</strong> ₹5,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80"
+                    alt="Toyota Innova Crysta">
+                <h3>Toyota Innova Crysta</h3>
+                <p><strong>Mileage:</strong> 14 km/l</p>
+                <p><strong>Facilities:</strong> Luxurious Interior, Rear AC, GPS Navigation</p>
+                <p><strong>Rent:</strong> ₹8,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/44709/fortuner-exterior-right-front-three-quarter-20.jpeg?isig=0&q=80"
+                    alt="Toyota Fortuner">
+                <h3>Toyota Fortuner</h3>
+                <p><strong>Mileage:</strong> 12 km/l</p>
+                <p><strong>Facilities:</strong> Premium SUV, Sunroof, Safety Features</p>
+                <p><strong>Rent:</strong> ₹10,000 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/115601/xl6-exterior-right-front-three-quarter-13.jpeg?isig=0&q=80"
+                    alt="Maruti Suzuki XL6">
+                <h3>Maruti Suzuki XL6</h3>
+                <p><strong>Mileage:</strong> 18 km/l</p>
+                <p><strong>Facilities:</strong> Captain Seats, Dual-Tone Interiors, Touchscreen Display</p>
+                <p><strong>Rent:</strong> ₹6,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+            <div class="service-card">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/115777/ertiga-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80"
+                    alt="Maruti Suzuki Ertiga">
+                <h3>Maruti Suzuki Ertiga</h3>
+                <p><strong>Mileage:</strong> 16 km/l</p>
+                <p><strong>Facilities:</strong> Spacious Cabin, Rear Parking Camera, Air Conditioning</p>
+                <p><strong>Rent:</strong> ₹5,500 per day</p>
+                <a href="booknowpage.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2024 MotoLux Rentals. All Rights Reserved. Design by Shivangi Chauhan</p>
+    </footer>
+</body>
+
+</html>

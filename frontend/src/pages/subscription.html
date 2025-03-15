@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+        .plan {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 320px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .plan:hover {
+            transform: scale(1.05);
+        }
+        .plan h2 {
+            margin-bottom: 10px;
+        }
+        .silver {
+            border-top: 5px solid #c0c0c0;
+        }
+        .gold {
+            border-top: 5px solid #ffd700;
+        }
+        .premium {
+            border-top: 5px solid #ff4500;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        .discount {
+            font-size: 18px;
+            color: green;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #6088f3, #002bb8);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #4a6fe2, #001a80);
+            transform: scale(1.05);
+        }
+        .promo-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>Choose Your Subscription Plan</h1>
+    <p>Enjoy the offer</p>
+    <div class="container">
+        <div class="plan silver">
+            <h2>Silver Plan</h2>
+            <p class="price">$9.99/month</p>
+            <p class="discount">10% Off</p>
+            <a href="buysubscription.html?plan=Silver&price=9.99&discount=10" class="btn" aria-label="Buy Silver Plan">Buy
+                Now</a>
+        </div>
+        <div class="plan gold">
+            <h2>Gold Plan</h2>
+            <p class="price">$19.99/month</p>
+            <p class="discount">20% Off</p>
+            <a href="buysubscription.html?plan=Gold&price=19.99&discount=20" class="btn" aria-label="Buy Gold Plan">Buy
+                Now</a>
+        </div>
+        <div class="plan premium">
+            <h2>Premium Plan</h2>
+            <p class="price">$29.99/month</p>
+            <p class="discount">30% Off</p>
+            <a href="buysubscription.html?plan=Premium&price=29.99&discount=30" class="btn"
+                aria-label="Buy Premium Plan">Buy Now</a>
+        </div>
+        <img src="../assets/verna.png" alt="Verna Car" class="promo-image">
+    </div>
+
+<script type="module" src="@/pages/subscription.js">
+    import { purchaseSubscription } from "../app.js";
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("subscription-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const subscriptionData = {
+                name: form.name.value,
+                email: form.email.value,
+                plan: document.getElementById("plan-name").innerText,
+                discount: parseFloat(document.getElementById("discount").innerText.replace("%", "")),
+                price: parseFloat(document.getElementById("price").innerText.replace("$", "")),
+                cardLast4Digits: form.card.value.slice(-4)
+            };
+            try {
+                const response = await fetch("http://localhost:5000/api/subscription", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(subscriptionData)
+                });
+                const result = await response.json();
+                console.log("Subscription Result:", result);
+                alert("Subscription purchased successfully!");
+            } catch (error) {
+                console.error("Subscription Error:", error);
+                alert("Subscription purchase failed. Please try again.");
+            }
+        });
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!--frontend>src>pages>service.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </title>>Our Services - MotoLux Rentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+        .header {
+            background-color: #0043ff8c;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav a:hover {
+            color: #ffd700;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #0043ff8c;
+            color: white;
+        }
+        .services-section {
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .services-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .services-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 22%;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .service-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .service-card h3 {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #0043ff8c;
+        }
+        .service-card p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>MotoLux Rentals</h1>
+        </div>
+    </header>
+    <section class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We offer a variety of car rental options to suit your needs, whether you're looking for luxury or economy
+                cars, SUVs, or vans for a family trip.</p>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="luxury-car.jpg" alt="Luxury Car">
+                    <h3>Luxury Car Rentals</h3>
+                    <p>Drive in style with our fleet of luxury cars. Perfect for business trips, weddings, and special
+                        events.</p>
+                </div>
+                <div class="service-card">
+                    <img src="economy-car.jpg" alt="Economy Car">
+                    <h3>Economy Car Rentals</h3>
+                    <p>Affordable and fuel-efficient vehicles for your everyday travel. Ideal for budget-friendly trips.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <img src="suv.jpg" alt="SUV Rental">
+                    <h3>SUV Rentals</h3>
+                    <p>Experience comfort and space with our range of SUVs, great for both city drives and off-road
+                        adventures.</p>
+                </div>
+                <div class="service-card">
+                    <img src="van.jpg" alt="Van Rental">
+                    <h3>Van Rentals</h3>
+                    <p>Spacious and comfortable vans for family trips or group travel. Fits up to 8 passengers
+                        comfortably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2024 MotoLux Rentals. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

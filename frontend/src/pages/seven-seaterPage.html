@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Seater Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0043ff8c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .services-section {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .services-section h2 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .services-section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-card h3 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+        .service-card button {
+            background-color: #0043ff8c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .service-card button:hover {
+            background-color: #0037e6;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MotoLux Rentals</h1>
+    </header>
+    <section class="services-section">
+        <div class="container">
+            <h2>Our Services in 7-Seater Cars</h2>
+            <p>Experience spacious comfort for your large family or group with our premium 7-seater rentals.</p>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80"
+                        alt="Toyota Innova Crysta">
+                    <h3>Toyota Innova Crysta</h3>
+                    <p><strong>Mileage:</strong> 14 km/l</p>
+                    <p><strong>Facilities:</strong> Luxurious Interior, Rear AC, GPS Navigation</p>
+                    <p><strong>Rent:</strong> ₹8,500 per day</p>
+                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                </div>
+                <div class="service-card">
+                    <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/44709/fortuner-exterior-right-front-three-quarter-20.jpeg?isig=0&q=80"
+                        alt="Toyota Fortuner">
+                    <h3>Toyota Fortuner</h3>
+                    <p><strong>Mileage:</strong> 12 km/l</p>
+                    <p><strong>Facilities:</strong> Premium SUV, Sunroof, Safety Features</p>
+                    <p><strong>Rent:</strong> ₹10,000 per day</p>
+                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                </div>
+                <div class="service-card">
+                    <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/115601/xl6-exterior-right-front-three-quarter-13.jpeg?isig=0&q=80"
+                        alt="Maruti Suzuki XL6">
+                    <h3>Maruti Suzuki XL6</h3>
+                    <p><strong>Mileage:</strong> 18 km/l</p>
+                    <p><strong>Facilities:</strong> Captain Seats, Dual-Tone Interiors, Touchscreen Display</p>
+                    <p><strong>Rent:</strong> ₹6,500 per day</p>
+                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                </div>
+                <div class="service-card">
+                    <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/115777/ertiga-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80"
+                        alt="Maruti Suzuki Ertiga">
+                    <h3>Maruti Suzuki Ertiga</h3>
+                    <p><strong>Mileage:</strong> 16 km/l</p>
+                    <p><strong>Facilities:</strong> Spacious Cabin, Rear Parking Camera, Air Conditioning</p>
+                    <p><strong>Rent:</strong> ₹5,500 per day</p>
+                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2024 MotoLux Rentals. All Rights Reserved.Design by Shivangi Chauhan</p>
+    </footer>
+    <script>
+        const bookNowButtons = document.querySelectorAll('.book-now');
+        bookNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const carName = button.closest('.service-card').querySelector('h3').innerText;
+                alert(`You have selected ${carName}. Please proceed to the booking process.`);
+            });
+        });
+    </script>
+</body>
+</html>
