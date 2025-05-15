@@ -192,6 +192,32 @@
                     alert("Failed to book car. Please try again.");
                 }
         });
+
+        // Get query params
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedCar = urlParams.get('car');
+            const selectedPrice = urlParams.get('price');
+
+            // Set the car model in the select box
+            if (selectedCar) {
+                const carSelect = document.getElementById("car-model");
+                const optionExists = [...carSelect.options].some(opt => opt.value === selectedCar);
+
+                if (!optionExists) {
+                    const newOption = new Option(selectedCar, selectedCar, true, true);
+                    carSelect.add(newOption);
+                } else {
+                    carSelect.value = selectedCar;
+                }
+            }
+
+            // Optionally show price on the page
+            if (selectedPrice) {
+                const priceElement = document.createElement("p");
+                priceElement.innerHTML = `<strong>Selected Car Price:</strong> ₹${selectedPrice} per day`;
+                document.querySelector(".container").insertBefore(priceElement, document.getElementById("booking-form"));
+            }
+
     </script>
 </body>
 </html>

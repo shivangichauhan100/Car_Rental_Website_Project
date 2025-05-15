@@ -113,7 +113,7 @@
                     <p><strong>Mileage:</strong> 7 km/l</p>
                     <p><strong>Facilities:</strong> Luxury Interiors, GPS Navigation, Premium Audio System</p>
                     <p><strong>Rent:</strong> ₹15,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Lamborghini%20Aventador&price=15000" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="http://1.bp.blogspot.com/-Koxr7Tlguhg/Umo0ruTxTcI/AAAAAAAAMCc/HMJp8Wk-gG4/s1600/Toyota+iQ+-+a+small+two+seater+car.jpg"
@@ -122,7 +122,7 @@
                     <p><strong>Mileage:</strong> 22 km/l</p>
                     <p><strong>Facilities:</strong> Air Conditioning, Compact Design, GPS Navigation</p>
                     <p><strong>Rent:</strong> ₹3,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Toyota%20iQ&price=3000" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="https://www.topgear.com/sites/default/files/2021/09/2.%202021%20Aura%20concept%20-%20British%20sports%20car%20driving.jpg?w=1784&h=1004"
@@ -131,7 +131,7 @@
                     <p><strong>Mileage:</strong> 10 km/l</p>
                     <p><strong>Facilities:</strong> Sports Design, GPS Navigation, Convertible Roof</p>
                     <p><strong>Rent:</strong> ₹8,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Aura%20Concept&price=8000" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="https://i.pinimg.com/originals/1b/06/d8/1b06d8e2fcdf7ef433cb2c84fabe4510.jpg"
@@ -140,7 +140,7 @@
                     <p><strong>Mileage:</strong> 12 km/l</p>
                     <p><strong>Facilities:</strong> Convertible, Sporty Drive, Air Conditioning</p>
                     <p><strong>Rent:</strong> ₹5,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Mazda%20Miata&price=5000" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="https://www.team-bhp.com/forum/attachments/indian-car-scene/1914515d1568260754-potential-2-seater-cars-india-hondae.jpg"
@@ -149,7 +149,7 @@
                     <p><strong>Mileage:</strong> 20 km/l</p>
                     <p><strong>Facilities:</strong> Compact Electric Car, GPS Navigation, Smart Features</p>
                     <p><strong>Rent:</strong> ₹4,500 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Honda%20E&price=4500" class="book-now">Book Now</a>
                 </div>
             </div>
         </div>
@@ -157,5 +157,15 @@
     <footer class="footer">
         <p>© 2024 MotoLux Rentals. All Rights Reserved.</p>
     </footer>
+    <script>
+        const bookNowButtons = document.querySelectorAll('.book-now');
+        bookNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const carName = button.closest('.service-card').querySelector('h3').innerText;
+                alert(`You have selected ${carName}. Please proceed to the booking process.`);
+            });
+        });
+    </script>
 </body>
+
 </html>

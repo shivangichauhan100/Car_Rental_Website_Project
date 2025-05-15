@@ -99,7 +99,7 @@
                     <p><strong>Mileage:</strong> 12 km/l</p>
                     <p><strong>Facilities:</strong> Spacious Interior, GPS Navigation, Dual-Zone Climate Control</p>
                     <p><strong>Rent:</strong> ₹5,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Toyota%20Fortuner&price=5000" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="https://tse3.mm.bing.net/th?id=OIP.czZ08Pgd9jMckzPuRM64rgHaEK&pid=Api&P=0&h=180"
@@ -108,9 +108,8 @@
                     <p><strong>Mileage:</strong> 15 km/l</p>
                     <p><strong>Facilities:</strong> Premium Interior, Air Conditioning, Sunroof</p>
                     <p><strong>Rent:</strong> ₹4,000 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Honda%20Civic&price=4000" class="book-now">Book Now</a>
                 </div>
-
                 <div class="service-card">
                     <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=600"
                         alt="BMW 3 Series">
@@ -118,7 +117,7 @@
                     <p><strong>Mileage:</strong> 10 km/l</p>
                     <p><strong>Facilities:</strong> Luxury Interiors, GPS, Surround Sound System</p>
                     <p><strong>Rent:</strong> ₹6,500 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=BMW%203%20Series&price=6500" class="book-now">Book Now</a>
                 </div>
                 <div class="service-card">
                     <img src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -127,7 +126,7 @@
                     <p><strong>Mileage:</strong> 18 km/l</p>
                     <p><strong>Facilities:</strong> Compact Comfort, GPS Navigation, Air Conditioning</p>
                     <p><strong>Rent:</strong> ₹3,500 per day</p>
-                    <a href="booknowpage.html" class="book-now">Book Now</a>
+                    <a href="booknowpage.html?car=Hyundai%20Verna&price=3500" class="book-now">Book Now</a>
                 </div>
             </div>
         </div>
@@ -135,5 +134,14 @@
     <footer class="footer">
         <p>© 2024 MotoLux Rentals. All Rights Reserved.</p>
     </footer>
+    <script>
+        const bookNowButtons = document.querySelectorAll('.book-now');
+        bookNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const carName = button.closest('.service-card').querySelector('h3').innerText;
+                alert(`You have selected ${carName}. Please proceed to the booking process.`);
+            });
+        });
+    </script>
 </body>
 </html>
